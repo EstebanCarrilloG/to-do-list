@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+}
+
+.todo-list__container {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+.todo-list__title {
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.ingreso-datos__container,
+.lista-tareas__container {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.title-and-btn__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-and-btn__container {
+    margin-bottom: 0.5rem;
+}
+
+.ingreso-datos__container{
+    background: white;
+    position: relative;
+}
+
+
+.ingreso-datos__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: fit-content;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.campo-titulo {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+
+}
+
+.form-btn {
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    color: white;
+    background: green;
+    border: none;
+}
+
+.tareas-container {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.task-container,
+.no-tasks__container {
+    padding: 0.8rem 1rem;
+    box-shadow: inset 0px 0px 11px -4px black
+}
+
+.red-btn {
+    background: red;
+}
+
+.green-btn {
+    background: green;
+}
+
+.blue-btn {
+    background: blue;
+}
+
+.btn-task {
+    margin-top: 0.3rem;
+    padding: 0.3rem 1rem;
+    color: white;
+    border: none;
+
+}
+
+.form-btn:hover,
+.btn-task:hover {
+    opacity: 0.5;
+}
+
+
+.notf-cont {
+    position: fixed;
+    text-align: center;
+    top: 0.7rem;
+    right: 0.7rem;
+    color: white;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    transition: all .6s;
+}
+
+.notf-wrong {
+    background: red;
+}
+
+.notf-succes {
+    background: green;
+}
+
+.notf-info {
+    background: blue;
+}
+
+.modal-new-edit-task {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #3d9d79d6;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+a#closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.no-tasks__container {
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0000003d;
+}
