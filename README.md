@@ -32,11 +32,11 @@ This project is a simple web application that uses HTML, CSS, and Vanilla JavaSc
 
 ## Screenshots
 
-![Task List](https://github.com/EstebanCarrilloG/to-do-list/tree/main/assets/to-do-list-task-list.jpg)
+![Task List](https://raw.github.com/EstebanCarrilloG/to-do-list/tree/main/assets/to-do-list-task-list.jpg)
 
-![Add task](https://github.com/EstebanCarrilloG/to-do-list/tree/main/assets/to-do-list-add-task.jpg)
+![Add task](https://raw.github.com/EstebanCarrilloG/to-do-list/tree/main/assets/to-do-list-add-task.jpg)
 
-![Edit task](https://github.com/EstebanCarrilloG/to-do-list/tree/main/assets/to-do-list-edit-task.jpg)
+![Edit task](https://raw.github.com/EstebanCarrilloG/to-do-list/tree/main/assets/to-do-list-edit-task.jpg)
 
 ## Contributions
 
