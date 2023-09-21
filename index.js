@@ -4,6 +4,8 @@ import { renderTasks } from "./components/renderAndSaveTasks.js"
 import { cleanInputs } from "./helpers/cleanInputs.js"
 import { showNotification } from "./helpers/notification.js"
 import { mutationObserverTask } from "./helpers/mutationObservers.js"
+import handleFormSubmit from "./helpers/handleFormSubmit.js"
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -20,34 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     tContainer.innerHTML = texto;
   }
 
-
+  
   adDNewTask.addEventListener("click", function () {
-    const task_container = renderInputform(td_list_container, "New Task Information");
+    const task_container = renderInputform(td_list_container, "New Task Information","add-task","Add Task");
 
-    closeModal.addEventListener("click", function () {
-      td_list_container.removeChild(task_container)
-    })
+    handleFormSubmit(td_list_container,arr,task_container);
 
-    btnAddNewTask.addEventListener("click", getData)
-
-    function getData() { 
-      let time = tdDate.value;
-      let title = tdTitle.value;
-      let description = tdDescription.value;
-
-
-      // VALIDACIONES
-      if (time == "" || title == "" || description == "") {
-        showNotification("notf-wrong", 'Error: Complete all fields.');
-      } else {
-        addTask({ time: time, title: title, description: description }, arr);
-        showNotification("notf-succes", "Task Saved Successfully.");
-        cleanInputs();
-        td_list_container.removeChild(task_container);
-
-      }
-
-    }
   })
 
   mutationObserverTask(arr, td_list_container);

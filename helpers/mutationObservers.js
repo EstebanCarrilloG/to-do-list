@@ -1,44 +1,37 @@
-import { renderInputform } from "../components/renderTaskInputForm.js"
-import { deleteTask, editTask } from "../programProperties.js"
-import { showNotification } from "./notification.js"
-
+import { renderInputform } from "../components/renderTaskInputForm.js";
+import { deleteTask, editTask } from "../programProperties.js";
+import handleFormSubmit from "./handleFormSubmit.js";
+import { showNotification } from "./notification.js";
 
 function mutationObserverTask(arr, td_list_container) {
-
   // Select the node that will be observed for mutations
-  const targetNode = document.querySelector('#tContainer');
-
-
+  const targetNode = document.querySelector("#tContainer");
 
   // Options for the observer (which mutations to observe)
   const config = { childList: true };
 
-
   // Callback function to execute when mutations are observed
+
   const callback = () => {
     document.querySelectorAll(".btn-eliminar").forEach((button, index) => {
       button.addEventListener("click", function () {
         deleteTask(index, arr);
         showNotification("notf-succes", "Task Deleted.");
-      })
+      });
     });
-
-    let i = 0;
 
     document.querySelectorAll(".btn-editar").forEach((button, index) => {
       button.addEventListener("click", function () {
-        i++;
-        const task_container = renderInputform(td_list_container, "Edit task information.");
-        //showNotification("notf-info", "Edite la tarea.");
+        const task_container = renderInputform(
+          td_list_container,
+          "Edit task information.",
+          "edit-task",
+          "Edit task"
+        );
         editTask(index, arr, task_container, td_list_container);
-        closeModal.addEventListener("click", function () {
-          td_list_container.removeChild(task_container)
-        })
-        // observer2.observe(targetNode2, config);
-      })
-
+        handleFormSubmit(td_list_container, arr, task_container, index);
+      });
     });
-
   };
 
   // Create an observer instance linked to the callback function
@@ -49,8 +42,6 @@ function mutationObserverTask(arr, td_list_container) {
   observer.observe(targetNode, config);
 
   callback();
-
 }
-
 
 export { mutationObserverTask };
