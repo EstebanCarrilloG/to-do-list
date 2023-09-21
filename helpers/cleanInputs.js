@@ -1,5 +1,5 @@
 export function cleanInputs() {
-    tdTime.value = "";
+    tdDate.value = "";
     tdTitle.value = "";
     tdDescription.value = ""; 
   }

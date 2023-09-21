@@ -40,10 +40,6 @@ This project is a simple web application that uses HTML, CSS, and Vanilla JavaSc
 
 Contributions are welcome! If you wish to improve this project, you can submit a pull request, and I will be happy to review it.
 
-## License
-
-This project is licensed under the MIT License. You can find more information in the [LICENSE](LICENSE) file in the repository.
-
 ---
 
 We hope this project proves useful to you and serves as an example of how to create a simple CRUD web application using HTML, CSS, and Vanilla JavaScript, along with utilizing `localStorage` and `MutationObserver()` for an enhanced user experience. Have fun exploring and learning!

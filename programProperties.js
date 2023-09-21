@@ -14,7 +14,7 @@ function deleteTask(index, arr) {
 function editTask(index, arr, task_container, td_list_container) {
 
     let { time, title, description } = arr[index];
-    tdTime.value = time;
+    tdDate.value = time;
     tdTitle.value = title;
     tdDescription.value = description;
 
@@ -24,7 +24,7 @@ function editTask(index, arr, task_container, td_list_container) {
 
     //<div class = "eCancel-btns__container" id = "edCanBtnCon" name = "objetObserved"></div>
 
-    let editButton = `<input class="form-btn green-btn" type="button" value="Editar tarea" id="btnEditTask">`;
+    let editButton = `<input class="form-btn green-btn" type="button" value="Edit Task" id="btnEditTask">`;
     //let cancelEditButton = `<input class="form-btn red-btn" type="button" value="Cancelar" id="btnEditTaskCancel">`;
 
     eCBtn_container.innerHTML = editButton;// + cancelEditButton;

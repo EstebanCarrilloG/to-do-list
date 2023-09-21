@@ -8,16 +8,16 @@ export function renderInputform(td_list_container, title) {
     <form class="ingreso-datos__form" action="" method="post">
     <h2 class="ingreso-datos__title">${title}</h2>
         <div class="contenedor-campos">
-            <p class="campo-titulo">Fecha:</p> <input type="date" name="td-time" id="tdTime">
+            <p class="campo-titulo">Date:</p> <input type="date" name="td-time" id="tdDate">
         </div>
         <div class="contenedor-campos">
-            <p class="campo-titulo">Titulo:</p> <input type="text" name="td-title" id="tdTitle">
+            <p class="campo-titulo">Title:</p> <input type="text" name="td-title" id="tdTitle">
         </div>
         <div class="contenedor-campos">
-            <p class="campo-titulo">Descripción:</p> <textarea  name="td-description"
+            <p class="campo-titulo">Description:</p> <textarea  name="td-description"
                 id="tdDescription"></textarea>
         </div>
-        <input class="form-btn" type="button" value="Agregar tarea" id="btnAddNewTask">
+        <input class="form-btn" type="button" value="Add Task" id="btnAddNewTask">
         <a class="close-modal" id="closeModal"><i class="fa-solid fa-xmark"></i></a>
 
         

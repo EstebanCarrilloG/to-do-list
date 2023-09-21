@@ -7,7 +7,7 @@ import { mutationObserverTask } from "./helpers/mutationObservers.js"
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  var arr = JSON.parse(localStorage.getItem("names")); //leer local storage
+  var arr = JSON.parse(localStorage.getItem("names")); 
   const td_list_container = document.querySelector("body");
 
 
@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
     : arr = new Array();
 
   if (arr.length === 0) {
-    const texto = `<div class="no-tasks__container">Aun no hay tareas</div>`
+    const texto = `<div class="no-tasks__container">No tasks added yet</div>`
     tContainer.innerHTML = texto;
   }
 
 
   adDNewTask.addEventListener("click", function () {
-    const task_container = renderInputform(td_list_container, "Añadir nueva tarea.");
+    const task_container = renderInputform(td_list_container, "New Task Information");
 
     closeModal.addEventListener("click", function () {
       td_list_container.removeChild(task_container)
@@ -30,18 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnAddNewTask.addEventListener("click", getData)
 
-    function getData() { //añadir tarea
-      let time = tdTime.value;
+    function getData() { 
+      let time = tdDate.value;
       let title = tdTitle.value;
       let description = tdDescription.value;
 
 
       // VALIDACIONES
       if (time == "" || title == "" || description == "") {
-        showNotification("notf-wrong", 'Error: Complete todos los campos.');
+        showNotification("notf-wrong", 'Error: Complete all fields.');
       } else {
         addTask({ time: time, title: title, description: description }, arr);
-        showNotification("notf-succes", "Tarea agregada con exito.");
+        showNotification("notf-succes", "Task Saved Successfully.");
         cleanInputs();
         td_list_container.removeChild(task_container);
 

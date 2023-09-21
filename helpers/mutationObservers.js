@@ -19,7 +19,7 @@ function mutationObserverTask(arr, td_list_container) {
     document.querySelectorAll(".btn-eliminar").forEach((button, index) => {
       button.addEventListener("click", function () {
         deleteTask(index, arr);
-        showNotification("notf-succes", "Tarea eliminada.");
+        showNotification("notf-succes", "Task Deleted.");
       })
     });
 
@@ -28,7 +28,7 @@ function mutationObserverTask(arr, td_list_container) {
     document.querySelectorAll(".btn-editar").forEach((button, index) => {
       button.addEventListener("click", function () {
         i++;
-        const task_container = renderInputform(td_list_container, "Editar tarea.");
+        const task_container = renderInputform(td_list_container, "Edit task information.");
         //showNotification("notf-info", "Edite la tarea.");
         editTask(index, arr, task_container, td_list_container);
         closeModal.addEventListener("click", function () {

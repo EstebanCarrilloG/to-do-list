@@ -21,7 +21,7 @@ export function editCancelTask(di_form, eCBtn_container, arr, index, task_contai
 
     btnEditTask.addEventListener("click", function () {
         let { time, title, description } = arr;
-        time = tdTime.value;
+        time = tdDate.value;
         title = tdTitle.value;
         description = tdDescription.value;
 
@@ -29,7 +29,7 @@ export function editCancelTask(di_form, eCBtn_container, arr, index, task_contai
         di_form.appendChild(newTask_Btn)
         di_form.removeChild(eCBtn_container);
         renderTasks(arr);
-        showNotification("notf-succes", "Tarea editada con exito.");
+        showNotification("notf-succes", "Task edited successfully.");
         cleanInputs();
         td_list_container.removeChild(task_container);
     })
