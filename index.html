@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="./style.css">
     <title>To do list</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <section class="container">
-        <div class="todo-list__container">
-            <div class="lista-tareas__container">
-                <h1 class="todo-list__title">TO DO LIST</h1>
-                <div class="title-and-btn__container">
-                    <h2 class="ingreso-datos__title">Tasks Lists</h2>
-                    <button class="btn-task blue-btn" type="button" id="adDNewTask"><i class="fa-solid fa-square-plus"></i> Add Task</button>
+<body class="bg-slate-100">
+    <section class="w-full h-[100vh]">
+        <div class=" max-w-4xl h-full m-auto flex items-center">
+            <div class="px-12 py-12 border-2 rounded-md bs w-full bg-slate-50">
+                <h1 class="mb-9 text-4xl text-center font-medium">TO DO LIST</h1>
+                <div class="flex justify-between pb-2 border-b-2">
+                    <h2 class="text-2xl">Tasks Lists</h2>
+                    <button class="text-2xl bg-green-600 text-white border-2 px-3 py-1 rounded-md" type="button" id="adDNewTask"><i class="fa-solid fa-square-plus"></i> Add Task</button>
                 </div>
 
-                <div class="tareas-container" id="tContainer" name="objetObserved"></div>
+                <div class="py-10" id="tContainer" name="objetObserved"></div>
 
 
             </div>
