@@ -1,9 +1,8 @@
 export function renderInputform(td_list_container, title) {
+  const task_container = document.createElement("div");
+  task_container.classList.add("modal-new-edit-task");
 
-    const task_container = document.createElement("div");
-    task_container.classList.add("modal-new-edit-task");
-
-    task_container.innerHTML = `
+  task_container.innerHTML = `
     <div class = "ingreso-datos__container">
     
     <form class="ingreso-datos__form" action="" method="post">
@@ -25,12 +24,9 @@ export function renderInputform(td_list_container, title) {
         
 
     </form>
-    </div>`
+    </div>`;
 
-    td_list_container.appendChild(task_container);
+  td_list_container.appendChild(task_container);
 
-    return task_container;
-
-
-
+  return task_container;
 }
