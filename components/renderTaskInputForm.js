@@ -7,7 +7,7 @@ export function renderInputform(td_list_container, title, formType,buttonText) {
     
     <form class="flex flex-col gap-3 " id="newProductForm" data-type=${formType}>
     <div class="w-full flex justify-end" >
-    <a id="closeModal" class="w-6 text-center" href="/"><i class="fa-solid fa-xmark"></i></a>
+    <a id="closeModal" class="w-6 text-center" href="./"><i class="fa-solid fa-xmark"></i></a>
     </div>
     <h2 class=" text-3xl mb-4">${title}</h2>
     
