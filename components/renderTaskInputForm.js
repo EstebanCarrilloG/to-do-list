@@ -1,4 +1,20 @@
-export function renderInputform(td_list_container, title, formType,buttonText) {
+/**
+ * Renders a modal window with a form to either add or edit a task
+ * and appends it to the given container.
+ *
+ * @param {HTMLElement} td_list_container - The container where the modal will be appended.
+ * @param {String} title - The title of the modal window.
+ * @param {String} formType - The type of the form, either "add-task" or "edit-task".
+ * @param {String} buttonText - The text of the submit button.
+ *
+ * @returns {HTMLElement} The created modal window element.
+ */
+export function renderInputform(
+  td_list_container,
+  title,
+  formType,
+  buttonText
+) {
   const task_container = document.createElement("div");
   task_container.classList.add("modal-new-edit-task");
 
@@ -7,7 +23,7 @@ export function renderInputform(td_list_container, title, formType,buttonText) {
     
     <form class="flex flex-col gap-3 " id="newProductForm" data-type=${formType}>
     <div class="w-full flex justify-end" >
-    <a id="closeModal" class="w-6 text-center" href="./"><i class="fa-solid fa-xmark"></i></a>
+    <button id="closeModalBtn" class="w-6 text-center" type="button"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <h2 class=" text-3xl mb-4">${title}</h2>
     
