@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>To do list</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body class="bg-slate-100">
-    <section class="w-full min-h-[100vh]">
-        <div class=" max-w-4xl p-4 min-h-[100%] m-auto flex items-center ">
-            <div class="px-10 border-2 rounded-md bs w-full bg-slate-50 min-[0px]:max-[425px]:px-3">
-                <h1 class="mb-9 mt-10 text-4xl text-center font-medium">TO DO LIST</h1>
-                <div class="flex items-center gap-3 justify-between pb-2 border-b-2 flex-wrap min-[0px]:max-[401px]:justify-center">
-                    <h2 class="text-2xl text-center">Tasks Lists</h2>
-                    <button class="text-2xl bg-green-600 text-white border-2 px-3 py-1 rounded-md" type="button" id="adDNewTask"><i class="fa-solid fa-square-plus"></i> Add Task</button>
-                </div>
+  <body class="bg-slate-100">
+    <section class="w-full h-[100vh]">
+      <div class="max-w-4xl h-full m-auto flex items-center">
+        <div class="px-12 py-12 border-2 rounded-md bs w-full bg-slate-50">
+          <h1 class="mb-9 text-4xl text-center font-medium">TO DO LIST</h1>
+          <div class="flex justify-between pb-2 border-b-2">
+            <h2 class="text-2xl">Tasks Lists</h2>
+            <button
+              class="text-2xl bg-green-600 text-white border-2 px-3 py-1 rounded-md"
+              type="button"
+              id="adDNewTask"
+            >
+              <i class="fa-solid fa-square-plus"></i> Add Task
+            </button>
+          </div>
 
-                <div class="py-10" id="tContainer" name="objetObserved"></div>
-
-
-            </div>
-
-
+          <div class="py-10" id="tContainer" name="objetObserved"></div>
         </div>
+      </div>
     </section>
 
-
     <script src="./index.js" type="module"></script>
-
-</body>
-
+  </body>
 </html>
