@@ -1,13 +1,12 @@
-import { renderTasks } from "../components/renderAndSaveTasks.js";
+import { renderTasks } from "../components/renderTasks.js";
 
 /**
  * Adds a new task to the given array and renders it.
- * @param {Object} e - An object containing the task information, with 'date', 'title', and 'description' properties.
- * @param {Array} arr - The array of tasks to which the new task will be added.
+ * @param {Object} newTaskInfo - An object containing the task information, with 'date', 'title', and 'description' properties.
+ * @param {Array} tasksList - The array of tasks to which the new task will be added.
  */
-function addTask(e, arr) {
-  arr.unshift(e);
-  renderTasks(arr);
+function addTask(newTaskInfo, tasksList) {
+  tasksList.unshift(newTaskInfo);
 }
 
 /**
@@ -17,28 +16,36 @@ function addTask(e, arr) {
  * in the DOM.
  *
  * @param {number} index - The index of the task to be deleted from the array.
- * @param {Array} arr - The array of tasks from which the task will be removed.
+ * @param {Array} tasksList - The array of tasks from which the task will be removed.
  */
-function deleteTask(index, arr) {
-  arr.splice(index, 1);
-  renderTasks(arr);
+function deleteTask(index, tasksList) {
+  tasksList.splice(index, 1);
+  renderTasks(tasksList);
 }
 
+
 /**
- * Populates the input fields with the task details from the specified index.
+ * Edits the task at the specified index in the given array and renders the updated list.
  *
- * Retrieves the 'date', 'title', and 'description' from the task at the given index
- * in the array and assigns them to the corresponding input fields.
+ * Edits the task at the specified index from the array and updates the rendered list of tasks
+ * in the DOM.
  *
- * @param {number} index - The index of the task in the array whose details are to be edited.
- * @param {Array} arr - The array of tasks containing task objects with 'date', 'title',
- *                      and 'description' properties.
+ * @param {Event} e - The event object which contains the new task information.
+ * @param {number} index - The index of the task to be edited from the array.
+ * @param {Array} tasksList - The array of tasks from which the task will be edited.
  */
-function editTask(index, arr) {
-  let { date, title, description } = arr[index];
-  tdDate.value = date;
-  tdTitle.value = title;
-  tdDescription.value = description;
+function editTask(e,index, tasksList) {
+
+  let { date, title, description } = tasksList;
+  date = e.target.date.value;
+  title = e.target.title.value;
+  description = e.target.description.value;
+
+  tasksList.splice(index, 1, {
+    date: date,
+    title: title,
+    description: description,
+  });
 }
 
 export { addTask, deleteTask, editTask };

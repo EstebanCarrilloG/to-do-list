@@ -1,4 +1,4 @@
-import { renderTasks } from "../components/renderAndSaveTasks.js";
+import { renderTasks } from "../components/renderTasks.js";
 import { addTask, editTask } from "./crudFunctions.js";
 import cleanInputs from "./cleanInputs.js";
 import { showNotification } from "./notification.js";
@@ -10,12 +10,12 @@ import { showNotification } from "./notification.js";
  * It also shows a success notification and removes the task container from the DOM.
  * If any of the fields are empty, it shows an error notification.
  *
- * @param {HTMLElement} td_list_container - The container where the tasks are rendered.
- * @param {Array} arr - The array of tasks to which the new task will be added or edited.
- * @param {HTMLElement} task_container - The container that contains the form and will be removed from the DOM.
+ * @param {HTMLElement} body - The container where the tasks are rendered.
+ * @param {Array} tasksList - The array of tasks to which the new task will be added or edited.
+ * @param {HTMLElement} taskForm - The container that contains the form and will be removed from the DOM.
  * @param {number} index - The index of the task to be edited.
  */
-function handleFormSubmit(td_list_container, arr, task_container, index) {
+function handleFormSubmit(body, tasksList, taskForm, index) {
   newProductForm.addEventListener("submit", function (e) {
     e.preventDefault();
     if (e.target.attributes["data-type"].value === "add-task") {
@@ -26,26 +26,19 @@ function handleFormSubmit(td_list_container, arr, task_container, index) {
       if (date == "" || title == "" || description == "") {
         showNotification("notf-wrong", "Error: Complete all fields.");
       } else {
-        addTask({ date: date, title: title, description: description }, arr);
+        addTask({ date: date, title: title, description: description }, tasksList);
+        renderTasks(tasksList);
         showNotification("notf-succes", "Task Saved Successfully.");
         cleanInputs();
-        td_list_container.removeChild(task_container);
+        body.removeChild(taskForm);
       }
     } else {
-      let { date, title, description } = arr;
-      date = e.target.date.value;
-      title = e.target.title.value;
-      description = e.target.description.value;
-
-      arr.splice(index, 1, {
-        date: date,
-        title: title,
-        description: description,
-      });
-      renderTasks(arr);
+         
+      editTask(e, index, tasksList);
+      renderTasks(tasksList);
       showNotification("notf-succes", "Task edited successfully.");
       cleanInputs();
-      td_list_container.removeChild(task_container);
+      body.removeChild(taskForm);
     }
   });
 }

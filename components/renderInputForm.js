@@ -2,7 +2,7 @@
  * Renders a modal window with a form to either add or edit a task
  * and appends it to the given container.
  *
- * @param {HTMLElement} td_list_container - The container where the modal will be appended.
+ * @param {HTMLElement} body - The container where the modal will be appended.
  * @param {String} title - The title of the modal window.
  * @param {String} formType - The type of the form, either "add-task" or "edit-task".
  * @param {String} buttonText - The text of the submit button.
@@ -10,7 +10,7 @@
  * @returns {HTMLElement} The created modal window element.
  */
 export function renderInputform(
-  td_list_container,
+  body,
   title,
   formType,
   buttonText
@@ -43,7 +43,7 @@ export function renderInputform(
     </form>
     </div>`;
 
-  td_list_container.appendChild(task_container);
+  body.appendChild(task_container);
 
   return task_container;
 }
